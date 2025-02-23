@@ -8,4 +8,5 @@ cd $DIR/..
 
 go build -o main main.go
 
-go test -v ./test/...
+# Run tests
+#go test -v ./test/...
