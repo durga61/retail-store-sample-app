@@ -13,3 +13,4 @@ kubeconfig_*
 node_modules
 
 ort-build
+.env

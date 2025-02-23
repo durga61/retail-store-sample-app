@@ -1,0 +1,31 @@
+version: 0.2
+
+filter-groups:
+  - pattern: 'src/catalog/*'
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.18
+    commands:
+      - echo "Installing dependencies..."
+      - curl -LO https://github.com/docker/setup-qemu-action/releases/download/v2.0.0/setup-qemu-action.sh
+      - chmod +x setup-qemu-action.sh
+      - ./setup-qemu-action.sh
+      - curl -LO https://github.com/docker/setup-buildx-action/releases/download/v2.0.0/setup-buildx-action.sh
+      - chmod +x setup-buildx-action.sh
+      - ./setup-buildx-action.sh
+
+  pre_build:
+    commands:
+      - echo "Running CI script..."
+      - src/catalog/scripts/ci.sh
+
+  build:
+    commands:
+      - echo "Building container image..."
+      - scripts/build-image.sh -s catalog -t ci
+
+artifacts:
+  files:
+    - '**/*'

@@ -67,7 +67,9 @@ parse_params() {
 
   while :; do
     case "${1-}" in
-    -h | --help) usage ;;
+    -h | --help)
+      usage
+      ;;
     -v | --verbose) set -x ;;
     --no-color) NO_COLOR=1 ;;
     -p | --push) push=true ;;
