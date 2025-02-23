@@ -6,7 +6,7 @@ filter-groups:
 phases:
   install:
     runtime-versions:
-      golang: 1.18
+      golang: 1.24
     # commands:
     #   - echo "Installing dependencies..."
     #   - curl -LO https://github.com/docker/setup-qemu-action/releases/download/v2.0.0/setup-qemu-action.sh
