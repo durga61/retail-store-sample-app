@@ -1,6 +1,9 @@
 version: 0.2
 
-
+env:
+  secrets-manager:
+    DOCKERHUB_USER: arn:aws:secretsmanager:ap-south-1:717279697458:secret:dev/docker/creds-PIQymI:DOCKERHUB_USER 
+    DOCKERHUB_TOKEN: arn:aws:secretsmanager:ap-south-1:717279697458:secret:dev/docker/creds-PIQymI:DOCKERHUB_TOKEN
 
 phases:
   install:
